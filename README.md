@@ -1,4 +1,4 @@
-# Anti-Injection Security Guard for Godot (C#)
+# Anti-Injection for Godot (C#)
 
 An asynchronous, multi-layered process protection module written in C# for Godot 4.x. This script detects and mitigates common client-side tampering techniques, including dynamic-link library (**DLL**) injection, remote thread creation, and process debugger attachment.
 
