@@ -23,10 +23,10 @@ public partial class AntiInjectionGuard : Node
     #region Native Win32 API Imports
     // ..............
 
-    [DllImport("", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32.dll", SetLastError = true)]
     private static extern bool isDebbugerPresent();
 
-    [DllImport("", SetLastError = true, ExactSpelling = true)]
+    [DllImport("kernel32.dll", ExactSpelling = true)]
     private static extern bool CheckRemoteDebuggerPresent(IntPtr hProcess, ref bool isDebbugerPresent);
     #endregion
 
@@ -34,7 +34,7 @@ public partial class AntiInjectionGuard : Node
     {
         // Set up the platform
 
-        if (OS.GetName() != "")
+        if (OS.GetName() != "Windows")
         {
             SetProcess(false);
             return;
